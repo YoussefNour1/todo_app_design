@@ -18,7 +18,8 @@ List<Map<String, dynamic>> doneTasks = [
 void navigate(
     {required BuildContext context,
     required Map<String, dynamic> task,
-    required bool isDone}) {
+    required bool isDone,
+    required int i}) {
   Navigator.push(context,
-      MaterialPageRoute(builder: (ctx) => Task(task: task, isDone: isDone)));
+      MaterialPageRoute(builder: (ctx) => Task(task: task, isDone: isDone, i:i,)));
 }

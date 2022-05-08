@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 class Task extends StatelessWidget {
   final Map<String, dynamic> task;
   final bool isDone;
+  final int i;
 
-  Task({Key? key, required this.task, required this.isDone}) : super(key: key);
+  Task({Key? key, required this.task, required this.isDone, required this.i}) : super(key: key);
 
   List<Map<String, dynamic>> content = [
     {"title": "add step", "icon": Icons.add},
@@ -69,10 +70,7 @@ class Task extends StatelessWidget {
                           )
                         ],
                       ),
-                      const Icon(
-                        Icons.star,
-                        color: Colors.orange,
-                      ),
+                      Icon(i%2 == 0? Icons.star : Icons.star_outline, color:i%2 == 0? Colors.orange:null,)
                     ],
                   ),
                   ...List.generate(

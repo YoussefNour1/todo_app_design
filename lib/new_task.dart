@@ -41,9 +41,10 @@ class NewTask extends StatelessWidget {
                   ],
                 ),
                 onTap: () {
-                  navigate(context: ctx, task: newTasks[i], isDone: false);
+                  navigate(context: ctx, task: newTasks[i], isDone: false, i: i);
                 },
                 leading: const Icon(Icons.circle_outlined),
+                trailing: Icon(i%2 == 0? Icons.star : Icons.star_outline, color:i%2 == 0? Colors.orange:null,),
               ),
           separatorBuilder: (_, x) => const Divider(),
           itemCount: newTasks.length),

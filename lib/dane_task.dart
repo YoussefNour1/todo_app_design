@@ -45,12 +45,13 @@ class DoneTask extends StatelessWidget {
                     ],
                   ),
                   onTap: () {
-                    navigate(context: ctx, task: doneTasks[i], isDone: true);
+                    navigate(context: ctx, task: doneTasks[i], isDone: true, i: i);
                   },
                   leading: const Icon(
                     Icons.check_circle_rounded,
                     color: Colors.green,
                   ),
+                    trailing: Icon(i%2 == 0? Icons.star : Icons.star_outline, color:i%2 == 0? Colors.orange:null,)
                 ),
               ),
           separatorBuilder: (_, i) => const Divider(),
